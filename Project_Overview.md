@@ -59,14 +59,12 @@ This layer stores cleaned, validated, and governed data.
 
 ### Process
 1. Read raw data from Bronze layer
-2. Apply data quality validations (OHLC logic, null checks)
-3. Clean data (remove unnecessary columns, filter invalid records)
-4. Add governance metadata (pipeline_run_id, source_system, etc.)
-5. Write to Delta tables with partitioning
+2. Clean data (remove unnecessary columns, filter invalid records)
+3. Add governance metadata (pipeline_run_id, source_system, etc.)
+4. Write to Delta tables with partitioning
 
 ### Data Quality Rules
 - Required columns present
-- No nulls in critical fields (symbol, close, high, low)
 - Data type consistency
 
 
@@ -76,8 +74,6 @@ This layer stores business-ready aggregations and ML features.
 
 ### Contents
 - **notebooks/**: Databricks notebooks for aggregations and feature engineering
-- **table_definitions/**: SQL view definitions for analytics
-- **README.md**: This documentation
 
 ### Process
 1. Read cleaned data from Silver layer
@@ -86,7 +82,6 @@ This layer stores business-ready aggregations and ML features.
 4. Store as Delta tables and SQL views
 
 ### Outputs
-- **Daily Stock Summary**: Aggregated OHLCV data by symbol and date
 - **Technical Indicators**: SMA, volatility, price changes
 - **ML Features**: Normalized and engineered features for modeling
 
