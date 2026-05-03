@@ -11,16 +11,12 @@ Extract_Transform_Load/
 │   
 ├── silver/
 │   ├── notebooks/
-│   │   └── transform_daily_nse_data.ipynb
-│   ├── table_definitions/
-│       └── stock_market_delta_tables.sql
+│       └── transform_daily_nse_data.ipynb
 │   
 ├── gold/
 │   ├── notebooks/
 │   │   ├── nse_aggregations.ipynb
-│   │   └── nse_feature_engineering.ipynb
-│   ├── table_defintions/
-│       └── stock_market_views.sql
+│       └── nse_feature_engineering.ipynb
 │   
 ├── orchestration/
 │   └── jobs/
@@ -46,7 +42,8 @@ Raw NSE API response is flattened into a tabular schema and written as Delta to 
 
 ### Notes
 - The notebook loads configuration from `configs/bronze_config.yaml`
-- The Bronze table is registered as `stock_market.bronze_nse_stock_raw`
+- The Bronze table is registered as `bronze_stocks_nse.nse_stock_details`
+- Add governance metadata (pipeline_run_id, source_system, etc.)
 - Partitioning is applied by `ingestion_date` for query performance
 
 
@@ -59,9 +56,8 @@ This layer stores cleaned, validated, and governed data.
 
 ### Process
 1. Read raw data from Bronze layer
-2. Clean data (remove unnecessary columns, filter invalid records)
-3. Add governance metadata (pipeline_run_id, source_system, etc.)
-4. Write to Delta tables with partitioning
+2. Clean data (removing unnecessary columns, renaming columns)
+3. Write to Delta tables with partitioning
 
 ### Data Quality Rules
 - Required columns present
