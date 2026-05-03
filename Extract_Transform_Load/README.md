@@ -4,7 +4,7 @@ This folder contains the initial ELT implementation for the Stock Market Analyti
 The pipeline uses a Bronze/Silver/Gold pattern:
 
 - `Bronze` stores raw NSE API output
-- `Silver` stores cleaned and governed data in Parquet or Delta format
+- `Silver` stores cleaned and transformed data in Delta format
 - `Gold` provides analytical views and business-ready aggregations
 
 ## Files
