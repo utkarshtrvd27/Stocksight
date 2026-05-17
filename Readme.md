@@ -81,3 +81,20 @@ This layer stores business-ready aggregations and ML features.
 - **Technical Indicators**: SMA, volatility, price changes
 - **ML Features**: Normalized and engineered features for modeling
 
+
+### Screenshots
+#### 1. Resource Group (az-stocks-insight)
+![alt text](images/az-stocks-insight.png)
+
+#### 2. Azure Databricks Service (Stocksight)
+![Stocksight](images/Azure_Databricks_Stocksight.png)
+
+![Databricks workspace](images/Databricks_1.png)
+
+![bronze layer](images/Databricks_bronze.png)
+
+![silver layer](images/Databricks_silver.png)
+
+![Databricks Catalog](images/Databricks_catalog.png)
+
+![Databricks SQL Warehouse](images/Databricks_SQL_Warehouse.png)
