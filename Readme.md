@@ -6,22 +6,22 @@ Extract_Transform_Load/
 ├── bronze/
 │   ├── notebooks/
 │   │   └── extract_api_daily_nse_data.ipynb
-│   ├── configs/
+│   └── configs/
 │       └── bronze_config.yaml
 │   
 ├── silver/
-│   ├── notebooks/
+│   └── notebooks/
 │       └── transform_daily_nse_data.ipynb
 │   
 ├── gold/
-│   ├── notebooks/
-│   │   ├── nse_aggregations.ipynb
+│   └── notebooks/
+│       ├── nse_aggregations.ipynb
 │       └── nse_feature_engineering.ipynb
 │   
-├── orchestration/
-│   └── jobs/
-│       └── daily_stock_pipeline.yml
-└── README.md
+└── orchestration/
+    └── jobs/
+        └── daily_stock_pipeline.yml
+
 ```
 
 ## Bronze Layer
@@ -82,19 +82,24 @@ This layer stores business-ready aggregations and ML features.
 - **ML Features**: Normalized and engineered features for modeling
 
 
-### Screenshots
-#### 1. Resource Group (az-stocks-insight)
+## Screenshots
+### 1. Resource Group (az-stocks-insight)
 ![alt text](images/az-stocks-insight.png)
 
-#### 2. Azure Databricks Service (Stocksight)
+### 2. Azure Databricks Service (Stocksight)
 ![Stocksight](images/Azure_Databricks_Stocksight.png)
 
+Databricks Workspace:
 ![Databricks workspace](images/Databricks_1.png)
 
-![bronze layer](images/Databricks_bronze.png)
-
-![silver layer](images/Databricks_silver.png)
-
+Databricks Catalog:
 ![Databricks Catalog](images/Databricks_catalog.png)
 
+Databricks SQL Warehouse:
 ![Databricks SQL Warehouse](images/Databricks_SQL_Warehouse.png)
+
+Bronze Layer:
+![bronze layer](images/Databricks_bronze.png)
+
+Silver Layer:
+![silver layer](images/Databricks_silver.png)
